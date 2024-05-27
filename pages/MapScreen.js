@@ -10,12 +10,15 @@ const MapScreen = ({ route, navigation }) => {
   const [cars, setCars] = useState([]);
   const [selectedCar, setSelectedCar] = useState(null);
 
+  // Retrieve the theme from the context
   const theme = useContext(themeContext);
 
+  // Retrieve the cars from the route parameters and set them in the state
   useEffect(() => {
     setCars(route.params.cars);
   }, []);
 
+  // handle the click on a car item to navigate to the map
   useEffect(() => {
     (async () => {
       let { status } = await Location.requestForegroundPermissionsAsync();
@@ -50,6 +53,7 @@ const MapScreen = ({ route, navigation }) => {
     }
   }, [selectedCar]);
 
+  // Create a reference to the map
   const mapRef = React.useRef(null);
 
   return (
@@ -85,7 +89,7 @@ const MapScreen = ({ route, navigation }) => {
               />
             ))}
           </MapView>
-          
+
           <TouchableOpacity style={[styles.heartButton, { backgroundColor: theme.color }]} onPress={() => navigation.navigate('Saved')}>
             <Icon name="heart" size={30} color="red" />
           </TouchableOpacity>

@@ -18,6 +18,7 @@ import SettingsScreen from './pages/SettingsScreen';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
+// The bottom tab navigator
 function MapStack({ cars }) {
   return (
     <Stack.Navigator initialRouteName="Map" screenOptions={{ headerShown: false }}>
@@ -31,6 +32,7 @@ function MapStack({ cars }) {
   );
 }
 
+// The bottom tab navigator
 function ListStack({ cars }) {
   return (
     <Stack.Navigator initialRouteName="List" screenOptions={{ headerShown: false }}>
@@ -43,6 +45,7 @@ function ListStack({ cars }) {
   );
 }
 
+// The bottom tab navigator
 function SettingsStack() {
   return (
     <Stack.Navigator initialRouteName="Settings" screenOptions={{ headerShown: false }}>
@@ -51,6 +54,7 @@ function SettingsStack() {
   );
 }
 
+// The main app component
 function App() {
   const [loading, setLoading] = useState(true); // Set the initial state to 'true'
   const [cars, setCars] = useState([]);

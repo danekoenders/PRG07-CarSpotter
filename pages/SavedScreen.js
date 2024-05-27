@@ -7,11 +7,13 @@ const SavedScreen = () => {
   const [savedCars, setSavedCars] = useState([]);
 
   const theme = useContext(themeContext);
-
+  
+  // retrieve the saved cars from storage
   useEffect(() => {
     getSavedCars();
   }, []);
 
+  // retrieve the saved cars from storage
   const getSavedCars = async () => {
     try {
       const savedCarsJson = await AsyncStorage.getItem('savedCars');

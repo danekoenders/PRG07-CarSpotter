@@ -11,6 +11,7 @@ const ListScreen = ({ route, navigation }) => {
 
   const theme = useContext(themeContext);
 
+  // Retrieve the cars from the route parameters and set them in the state
   useEffect(() => {
     setCars(route.params.cars);
     getSavedCars();

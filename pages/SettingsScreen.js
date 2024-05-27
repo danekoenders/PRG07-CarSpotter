@@ -4,6 +4,7 @@ import { View, Text, SafeAreaView, StyleSheet, Switch } from 'react-native';
 import { EventRegister } from 'react-native-event-listeners';
 import themeContext from '../theme/themeContext';
 
+// Settings screen
 const SettingsScreen = () => {
 
   const [darkMode, setDarkMode] = useState(false);
